@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.locationevents.LocationEvents" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Native"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Location Events</name>
+    <description>Event handlers for location updates</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <propertyGroup caption="Settings">
+                <property key="enabled" type="expression" defaultValue="true">
+                	<caption>Enabled</caption>
+	                <description />
+                    <returnType type="Boolean" />
+                </property>
+                <property key="enableHighAccuracy" type="expression" defaultValue="true">
+                	<caption>Request High Accuracy</caption>
+	                <description />
+                    <returnType type="Boolean" />
+                </property>
+                <property key="useSignificantChanges" type="expression" defaultValue="false">
+                	<caption>Only Significant Changes</caption>
+	                <description />
+                    <returnType type="Boolean" />
+                </property>
+                <property key="distanceFilter" type="expression" defaultValue="100">
+                	<caption>Min. Distance (m)</caption>
+	                <description />
+                    <returnType type="Integer" />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Location Updates">
+                <property key="latitude" type="attribute">
+                    <caption>Latitude</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="longitude" type="attribute" onChange="onLocationChange">
+                    <caption>Longitude</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Optional Updates">
+                <property key="timestamp" type="attribute" required="false">
+                    <caption>Timestamp</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="DateTime"/>
+                    </attributeTypes>
+                </property>
+                <property key="altitude" type="attribute" required="false">
+                    <caption>Altitude</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="accuracy" type="attribute" required="false">
+                    <caption>Accuracy</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="altitudeAccuracy" type="attribute" required="false">
+                    <caption>Altitude Accuracy</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="heading" type="attribute" required="false">
+                    <caption>Heading</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="speed" type="attribute" required="false">
+                    <caption>Speed</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Events">
+                <property key="onLocationChange" type="action">
+                    <caption>On change</caption>
+                    <description/>
+                </property>        
+            </propertyGroup>
+        </propertyGroup>
+    </properties>
+</widget>

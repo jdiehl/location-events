@@ -1,0 +1,23 @@
+diff --git a/node_modules/@react-native-community/geolocation/js/implementation.native.ts b/node_modules/@react-native-community/geolocation/js/implementation.native.ts
+index 53b3c76..917db4c 100644
+--- a/node_modules/@react-native-community/geolocation/js/implementation.native.ts
++++ b/node_modules/@react-native-community/geolocation/js/implementation.native.ts
+@@ -11,7 +11,6 @@ import type { EmitterSubscription } from 'react-native';
+ 
+ import GeolocationNativeInterface from './nativeInterface';
+ 
+-import invariant from 'invariant';
+ import { logError, warning } from './utils';
+ 
+ import type {
+@@ -77,10 +76,6 @@ export async function getCurrentPosition(
+   error: (error: GeolocationError) => void = logError,
+   options: GeolocationOptions = {}
+ ) {
+-  invariant(
+-    typeof success === 'function',
+-    'Must provide a valid geo_success callback.'
+-  );
+   // Permission checks/requests are done on the native side
+   RNCGeolocation.getCurrentPosition(options, success, error);
+ }
